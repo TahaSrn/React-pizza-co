@@ -10,6 +10,7 @@ import {
 import OrderItem from "./OrderItem";
 import { useEffect } from "react";
 import UpdateOrder from "./UpdateOrder";
+import LinkButton from "../../ui/LinkButton";
 
 function Order() {
   const order = useLoaderData();
@@ -89,6 +90,7 @@ function Order() {
         <p className="font-bold">
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
+        <LinkButton to="/menu">&larr; Back to menu</LinkButton>
       </div>
 
       {!priority && <UpdateOrder order={order} />}
